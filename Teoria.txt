@@ -77,7 +77,7 @@ e seguire solo la prima parte dove facciamo deploy e creiamo la repository in Gi
 .git add .
 .git commit -m "first commit"
 .git branch -M main
-.git remote add origin https://github.com/FrancoUP/Newsletter-React.git
+.git remote add origin https://github.com/FrancoUP/Invoice-Application-React.git
 .git push -u origin main
 
 In ogni caso tutti questi comandi qui sopra li trova nella repository appena creata in Github
@@ -85,7 +85,8 @@ In ogni caso tutti questi comandi qui sopra li trova nella repository appena cre
 .Poi inserire base: "/nomeProgetto/" nel file vite.config.ts , esempio:
 
 export default defineConfig({
-  base: "/Newsletter-React/",
+  base: "/Invoice-Application-React
+/",
   plugins: [react()],
 });
 

@@ -105,3 +105,16 @@ export default defineConfig({
 . Poi clicco su Action non in settings ma nella barra in alto e li vedo che il workflow si carica , quando finisce di caricare clicco su setting e poi pages e in "branch option" clicco su gh-pages
 
 . Poi ritorno su Action nella barra in alto e da li vedo che si sta caricando gh-pages a spetto e poi ritornando su setting e pages posso far partire l'applicazione
+
+
+///////////////////////////////////////////////////////////////////
+
+Secondo modo di creare github page, senza creare la cartella come descritto qui sopra:
+
+.In GitHub clicco su settings in gitHub , poi Actions e poi General, poi vado in fondo e su Workflow permissions e clicco su Read and write permission e clicco su save
+
+.Poi sempre in settings vado su pages e sulla selezione Deploy from a branch seleziono Action per il momento
+
+.Poi vado su acton nella barra in alto e clicco sul comando per creare una nuova actions , dove inserisco il nome del file yml e nel file yml il codice prelevato da questo sito https://vitejs.dev/guide/static-deploy e salvo
+
+. Poi rivado su action e li vedo che si carica , una volta caricato ritorno su setting in Page e li riporto da action a Deploy from a branch

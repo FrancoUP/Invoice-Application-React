@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Routes, Route, HashRouter as Router } from "react-router-dom";
 // import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import InvoicesPage from "./pages/InvoicesPage";
@@ -15,19 +15,21 @@ const queryClient = new QueryClient({
   },
 });
 
+// Invoice-Application-React/
+
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
 
-      <BrowserRouter basename="/Invoice-Application-React/">
+      <Router basename="/">
         <Routes>
           <Route path="/" element={<HomePage />}>
             <Route index element={<InvoicesPage />} />
             <Route path="invoice/:id" element={<PageInvoice />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </Router>
 
       <Toaster
         // positione nel viewport

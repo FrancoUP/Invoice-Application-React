@@ -1,0 +1,106 @@
+TECNOLOGIE USATE: Vite, Typescript, Tailwind, Router, React Form(folder features), Context API
+
+INSTALLARE REACT IN TYPESCRIPT
+
+1: Andare nella cartella dove voglio creare il progetto e da terminal:
+
+2: npm create vite@latest
+
+3: Entrare nella cartella dell'applicazione appena creata
+
+4: npm i
+
+5: npm run dev
+
+
+PIANIFICARE IL PROGETTO
+
+1) Progettare la struttura quindi creare una lista di features e requirements 
+
+2) Creazione della struttura delle cartelle 
+
+a: Creazione delle features categories folder in base alla struttura creata qui sopra.Quindi creo una cartella features dentro src dove a sua volta creo tante cartelle quante sono le categorie che voglio implementare, in tali cartelle pongo tutti i componenti e custom hook relativi a quella categoria 
+
+b: In base alle feature categories decidiamo quali pagine creare e quindi in src creiamo una cartella "pages" con i files relativi a ogni pagina
+
+c: Creare in src una cartella "ui" con tutti i componenti che non sono ne pagine e che non fanno parte delle features categorie
+
+d: Sempre dentro src creiamo una cartella "services" dove poniamo tutto il codice riutilizzabile che interagisce con la web API
+
+e: Poi sempre in src creiamo una cartella "utils" dove poniamo le helper function che sono codice riutilizzabile in tutto il codice, ma a differenza di quelle in services tali devono essere stateless function quindi senza side effects
+
+f: Poi sempre in src creo una cartella "context" per i context API
+
+g: in src creo una cartela "hooks" per i custom hook che non fanno parte di nessuna feature categorie
+
+d: in src una cartella "styles" per gli styles se serve
+
+3) pianificare in quali componenti rompere l'user interface, quindi quali componenti creare, IMPORTANTE, rendere un componente riutilizzabile in altri progetti
+
+4) costruire prima una versione senza state, quindi implementare la parte grafica
+
+5) Poi pianifichiamo lo state managment e quindi classifichiamo quali tipi di state ci serveono e dove posizionarli
+
+6) L'ultima fase é di decide quale tecnologie utilizzare in base agli state che utilizziamo e come impostiamo l'applicazione come ad esempio routing, tailwind, React Query ecc...
+
+
+TECNOLOGIE DA UTILIZZARE IN BASE AGLI STATE 
+
+1) Per gli UI state quindi state che non vengono fecciati da librerie estendere
+
+  a) se local state: useState, useReducer, useRef
+  b) se global state: Context API + useState/useReducer, Redux, React Router, Zustand, Recoil
+
+2) Per i Remote state quindi tutti quegli state fecciati da librerie estendere
+
+  a) se local state: fetch + useEffect + useState/useReducer
+  b) se global state: Context API + useState/useReducer, React Query, SWR, RTK Quesry  altri possono essere Redux, React Router, Zustand, Recoil
+
+
+CAMBIARE ICONA E TITOLO
+
+Per cambiare l'icona andare su index.html e su:
+
+<link rel="icon" type="image/svg+xml" href="/mail.png" /> 
+
+modificare l'href, l'immagine in un progetto vite é salvata nella cartella public.
+
+Per modificare il titolo sempre nel file index.html modificare l'inner HTML dell'elemento title
+
+
+DEPLOY VITE PROJECT TO GITHUB
+
+Vai al sito: https://vitejs.dev/guide/static-deploy
+e seguire solo la prima parte dove facciamo deploy e creiamo la repository in GitHub e poi inserire questi comandi nel terminal :
+
+.git init
+.git add .
+.git commit -m "first commit"
+.git branch -M main
+.git remote add origin https://github.com/FrancoUP/Newsletter-React.git
+.git push -u origin main
+
+In ogni caso tutti questi comandi qui sopra li trova nella repository appena creata in Github
+
+.Poi inserire base: "/nomeProgetto/" nel file vite.config.ts , esempio:
+
+export default defineConfig({
+  base: "/Newsletter-React/",
+  plugins: [react()],
+});
+
+.Poi nella cartella principale creo una cartella ".github" e dentro tale cartella creo un'altra cartella "workflows" e dentro creto un file "deploy.yml" e dentro copio esattamente questo codice che posso trovare nel sito "https://github.com/ErickKS/vite-deploy".
+
+.Poi sul terminal mando questi:
+
+.git add . 
+.git commit -m "add: deploy workflow" 
+.git push
+
+
+.Poi clicco su settings in gitHub , poi Actions e poi General, poi vado in fondo e su Workflow permissions e clicco su Read and write permission e clicco su save
+
+
+. Poi clicco su Action non in settings ma nella barra in alto e li vedo che il workflow si carica , quando finisce di caricare clicco su setting e poi pages e in "branch option" clicco su gh-pages
+
+. Poi ritorno su Action nella barra in alto e da li vedo che si sta caricando gh-pages a spetto e poi ritornando su setting e pages posso far partire l'applicazione

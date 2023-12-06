@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  /* background: rgb(64, 64, 64); */
+  -webkit-tap-highlight-color: transparent;
+}
+
+#invoicesPage {
+  overflow-y: hidden;
+}
+
+/* ::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f8f8fb;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d8d8d8;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-button {
+  background-color: #f8f8fb;
+} */
+
+input {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* For Firefox */
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

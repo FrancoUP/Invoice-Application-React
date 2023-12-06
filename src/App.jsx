@@ -20,7 +20,7 @@ export default function App() {
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
 
-      <BrowserRouter basename="/">
+      <BrowserRouter basename="/Invoice-Application-React/">
         <Routes>
           <Route path="/" element={<HomePage />}>
             <Route index element={<InvoicesPage />} />
